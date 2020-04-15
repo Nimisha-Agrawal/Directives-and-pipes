@@ -1,0 +1,32 @@
+<div style="text-align: center; border: 1px solid; ">
+<button  class = "btn btn-lg btn-outline-primary "(click) = "openFormModal() ">Open Modal</button>
+</div>
+<h1>One dimensional Array</h1>
+    <ul>
+      <li *ngFor="let s of clientScrips | sortBy: 'asc'">{{ s }}</li>
+    </ul>
+    <h1>Array of Objects (JSON)</h1>
+    <h2>Sort by name</h2>
+    <ul>
+      <li *ngFor="let s of data | sortBy: 'asc':'name'">
+        {{ s.id }}-{{ s.name }}
+      </li>
+    </ul>
+    <h2>Sort by id</h2>
+    <ul>
+      <li *ngFor="let s of data | sortBy: 'desc':'id'">
+        {{ s.id }}-{{ s.name }}
+      </li>
+    </ul>
+
+<!--<div  *ngFor = "let link of Links ; let i = index">
+    <a  href = "#">{{link}} {{i+1}}</a>   
+</div>-
+<app-form-modal (submitEvent) = "generateButton($event)" >
+</app-form-modal>
+-->
+<!--<div #buttonsContainer style="display:flex;flex-wrap:wrap">
+</div>
+<button (click) = "generateButton()" >Click Here</button>
+
+<p>{{data|json}}</p> -->
