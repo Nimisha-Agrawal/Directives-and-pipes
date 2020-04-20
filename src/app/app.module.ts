@@ -4,13 +4,16 @@ import {NgbModule}  from '@ng-bootstrap/ng-bootstrap';
 import { Routes, RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormModalComponent } from './form-modal/form-modal.component';
+import { FormModalComponent } from './components/form-modal/form-modal.component';
 import {FormsModule,ReactiveFormsModule}  from '@angular/forms';
 import {HttpClientModule}  from '@angular/common/http';
 //import { NewsComponent } from './news/news.component';
 import { SubmitComponent } from './components/submit/submit.component';
 import { DigitDirective } from './digitOnly.directive';
-import {SortByPipe} from './SortData.pipe'
+import {SortByPipe} from './SortData.pipe';
+import {simpleService} from './simpleService';
+import { ParentComponent } from './components/parent/parent.component';
+import { ChildComponent } from './components/child/child.component'
 
 
 @NgModule({
@@ -20,7 +23,9 @@ import {SortByPipe} from './SortData.pipe'
       SortByPipe,
       //NewsComponent,
       SubmitComponent,
-      DigitDirective
+      DigitDirective,
+      ParentComponent,
+      ChildComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +35,7 @@ import {SortByPipe} from './SortData.pipe'
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [simpleService],
   bootstrap: [AppComponent],
   entryComponents: [FormModalComponent]
 })
